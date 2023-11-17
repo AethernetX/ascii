@@ -1,0 +1,3 @@
+# Ascii
+
+just a small project where I create ASCII animations in terminal. Not sure where this will be going...
