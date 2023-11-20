@@ -1,4 +1,6 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include <math.h>
 
 const int WIDTH{30};
@@ -28,12 +30,13 @@ int plot(int x, int y){
 
 int main(){
     foo(charArray, WIDTH * HEIGHT);
-    charArray[plot(3, 2)] = '@';
     // idk why thought it would be fun to use the --> operator for a change
-    int frames{1};
+    int frames{WIDTH * HEIGHT};
     while(frames --> 0){
+        system("cls");
+        charArray[frames] = '@';
         draw(charArray, WIDTH * HEIGHT);
-        std::cout << "\n -------------------------------------";
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
     return 0;
 }
