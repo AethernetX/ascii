@@ -1,7 +1,8 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <math.h>
+
+#include "vector.h"
 
 const int WIDTH{30};
 const int HEIGHT{10};
@@ -31,12 +32,19 @@ int plot(int x, int y){
 int main(){
     foo(charArray, WIDTH * HEIGHT);
     // idk why thought it would be fun to use the --> operator for a change
-    int frames{WIDTH * HEIGHT};
-    while(frames --> 0){
-        system("cls");
-        charArray[frames] = '@';
-        draw(charArray, WIDTH * HEIGHT);
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    }
+    //int frames{WIDTH * HEIGHT};
+    //while(frames --> 0){
+    //    system("cls");
+    //    charArray[frames] = '@';
+    //    draw(charArray, WIDTH * HEIGHT);
+    //    std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    //}
+
+    vector v1 = vector(12,12);
+    v1.printValue();
+    std::cout << v1.magnitude() << "\n";
+    v1.normalise();
+    v1.printValue();
+
     return 0;
 }
